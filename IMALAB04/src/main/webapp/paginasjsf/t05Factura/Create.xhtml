@@ -12,8 +12,6 @@
             <h:form id="T05FacturaCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t05FacturaController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateT05FacturaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{t05FacturaController.selected.id}" title="#{bundle.CreateT05FacturaTitle_id}" required="true" requiredMessage="#{bundle.CreateT05FacturaRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateT05FacturaLabel_serieFactura}" for="serieFactura" />
                         <p:inputText id="serieFactura" value="#{t05FacturaController.selected.serieFactura}" title="#{bundle.CreateT05FacturaTitle_serieFactura}" />
                         <p:outputLabel value="#{bundle.CreateT05FacturaLabel_numeroFactura}" for="numeroFactura" />

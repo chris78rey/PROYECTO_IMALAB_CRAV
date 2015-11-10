@@ -12,8 +12,6 @@
             <h:form id="T02ClasificacionViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t02ClasificacionController.selected != null}">
-                        <h:outputText value="#{bundle.ViewT02ClasificacionLabel_id}"/>
-                        <h:outputText value="#{t02ClasificacionController.selected.id}" title="#{bundle.ViewT02ClasificacionTitle_id}"/>
                         <h:outputText value="#{bundle.ViewT02ClasificacionLabel_descripcion}"/>
                         <h:outputText value="#{t02ClasificacionController.selected.descripcion}" title="#{bundle.ViewT02ClasificacionTitle_descripcion}"/>
                         <h:outputText value="#{bundle.ViewT02ClasificacionLabel_t01Grupos}"/>

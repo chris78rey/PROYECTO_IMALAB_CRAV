@@ -12,8 +12,6 @@
             <h:form id="T03DeterminacionCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t03DeterminacionController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{t03DeterminacionController.selected.id}" title="#{bundle.CreateT03DeterminacionTitle_id}" required="true" requiredMessage="#{bundle.CreateT03DeterminacionRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_descripcion}" for="descripcion" />
                         <p:inputText id="descripcion" value="#{t03DeterminacionController.selected.descripcion}" title="#{bundle.CreateT03DeterminacionTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateT03DeterminacionRequiredMessage_descripcion}"/>
                         <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_fechaDefPrecio}" for="fechaDefPrecio" />

@@ -12,8 +12,6 @@
             <h:form id="T04RefirienteCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t04RefirienteController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateT04RefirienteLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{t04RefirienteController.selected.id}" title="#{bundle.CreateT04RefirienteTitle_id}" required="true" requiredMessage="#{bundle.CreateT04RefirienteRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateT04RefirienteLabel_dirConsultorio}" for="dirConsultorio" />
                         <p:inputText id="dirConsultorio" value="#{t04RefirienteController.selected.dirConsultorio}" title="#{bundle.CreateT04RefirienteTitle_dirConsultorio}" />
                         <p:outputLabel value="#{bundle.CreateT04RefirienteLabel_porcentajeRefiriente}" for="porcentajeRefiriente" />

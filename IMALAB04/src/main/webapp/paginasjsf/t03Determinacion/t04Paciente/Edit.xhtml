@@ -12,8 +12,6 @@
             <h:form id="T04PacienteEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t04PacienteController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditT04PacienteLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{t04PacienteController.selected.id}" title="#{bundle.EditT04PacienteTitle_id}" required="true" requiredMessage="#{bundle.EditT04PacienteRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditT04PacienteLabel_t04Persona}" for="t04Persona" />
                         <p:selectOneMenu id="t04Persona" value="#{t04PacienteController.selected.t04Persona}" required="true" requiredMessage="#{bundle.EditT04PacienteRequiredMessage_t04Persona}">
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>

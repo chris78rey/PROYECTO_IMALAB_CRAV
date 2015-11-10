@@ -12,8 +12,6 @@
             <h:form id="T04PersonaViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t04PersonaController.selected != null}">
-                        <h:outputText value="#{bundle.ViewT04PersonaLabel_id}"/>
-                        <h:outputText value="#{t04PersonaController.selected.id}" title="#{bundle.ViewT04PersonaTitle_id}"/>
                         <h:outputText value="#{bundle.ViewT04PersonaLabel_ccRuc}"/>
                         <h:outputText value="#{t04PersonaController.selected.ccRuc}" title="#{bundle.ViewT04PersonaTitle_ccRuc}"/>
                         <h:outputText value="#{bundle.ViewT04PersonaLabel_nombre}"/>

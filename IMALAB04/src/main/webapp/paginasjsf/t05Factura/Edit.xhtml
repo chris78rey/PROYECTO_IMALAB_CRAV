@@ -12,8 +12,6 @@
             <h:form id="T05FacturaEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t05FacturaController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditT05FacturaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{t05FacturaController.selected.id}" title="#{bundle.EditT05FacturaTitle_id}" required="true" requiredMessage="#{bundle.EditT05FacturaRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditT05FacturaLabel_serieFactura}" for="serieFactura" />
                         <p:inputText id="serieFactura" value="#{t05FacturaController.selected.serieFactura}" title="#{bundle.EditT05FacturaTitle_serieFactura}" />
                         <p:outputLabel value="#{bundle.EditT05FacturaLabel_numeroFactura}" for="numeroFactura" />

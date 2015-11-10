@@ -12,8 +12,6 @@
             <h:form id="T03DeterminacionViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t03DeterminacionController.selected != null}">
-                        <h:outputText value="#{bundle.ViewT03DeterminacionLabel_id}"/>
-                        <h:outputText value="#{t03DeterminacionController.selected.id}" title="#{bundle.ViewT03DeterminacionTitle_id}"/>
                         <h:outputText value="#{bundle.ViewT03DeterminacionLabel_descripcion}"/>
                         <h:outputText value="#{t03DeterminacionController.selected.descripcion}" title="#{bundle.ViewT03DeterminacionTitle_descripcion}"/>
                         <h:outputText value="#{bundle.ViewT03DeterminacionLabel_fechaDefPrecio}"/>

@@ -12,8 +12,6 @@
             <h:form id="T04PacienteViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t04PacienteController.selected != null}">
-                        <h:outputText value="#{bundle.ViewT04PacienteLabel_id}"/>
-                        <h:outputText value="#{t04PacienteController.selected.id}" title="#{bundle.ViewT04PacienteTitle_id}"/>
                         <h:outputText value="#{bundle.ViewT04PacienteLabel_t04Persona}"/>
                         <h:outputText value="#{t04PacienteController.selected.t04Persona}" title="#{bundle.ViewT04PacienteTitle_t04Persona}"/>
                     </p:panelGrid>

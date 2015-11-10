@@ -12,9 +12,7 @@
             <h:form id="T02ClasificacionEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t02ClasificacionController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditT02ClasificacionLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{t02ClasificacionController.selected.id}" title="#{bundle.EditT02ClasificacionTitle_id}" required="true" requiredMessage="#{bundle.EditT02ClasificacionRequiredMessage_id}"/>
-                        <p:outputLabel value="#{bundle.EditT02ClasificacionLabel_descripcion}" for="descripcion" />
+                     <p:outputLabel value="#{bundle.EditT02ClasificacionLabel_descripcion}" for="descripcion" />
                         <p:inputText id="descripcion" value="#{t02ClasificacionController.selected.descripcion}" title="#{bundle.EditT02ClasificacionTitle_descripcion}" />
                         <p:outputLabel value="#{bundle.EditT02ClasificacionLabel_t01Grupos}" for="t01Grupos" />
                         <p:selectOneMenu id="t01Grupos" value="#{t02ClasificacionController.selected.t01Grupos}" required="true" requiredMessage="#{bundle.EditT02ClasificacionRequiredMessage_t01Grupos}">

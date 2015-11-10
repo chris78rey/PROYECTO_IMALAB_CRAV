@@ -12,8 +12,6 @@
             <h:form id="T05FacturaViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t05FacturaController.selected != null}">
-                        <h:outputText value="#{bundle.ViewT05FacturaLabel_id}"/>
-                        <h:outputText value="#{t05FacturaController.selected.id}" title="#{bundle.ViewT05FacturaTitle_id}"/>
                         <h:outputText value="#{bundle.ViewT05FacturaLabel_serieFactura}"/>
                         <h:outputText value="#{t05FacturaController.selected.serieFactura}" title="#{bundle.ViewT05FacturaTitle_serieFactura}"/>
                         <h:outputText value="#{bundle.ViewT05FacturaLabel_numeroFactura}"/>

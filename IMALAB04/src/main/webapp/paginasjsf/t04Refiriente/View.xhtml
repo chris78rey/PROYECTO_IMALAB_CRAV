@@ -12,8 +12,6 @@
             <h:form id="T04RefirienteViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t04RefirienteController.selected != null}">
-                        <h:outputText value="#{bundle.ViewT04RefirienteLabel_id}"/>
-                        <h:outputText value="#{t04RefirienteController.selected.id}" title="#{bundle.ViewT04RefirienteTitle_id}"/>
                         <h:outputText value="#{bundle.ViewT04RefirienteLabel_dirConsultorio}"/>
                         <h:outputText value="#{t04RefirienteController.selected.dirConsultorio}" title="#{bundle.ViewT04RefirienteTitle_dirConsultorio}"/>
                         <h:outputText value="#{bundle.ViewT04RefirienteLabel_porcentajeRefiriente}"/>
