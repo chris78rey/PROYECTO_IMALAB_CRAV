@@ -12,8 +12,6 @@
             <h:form id="T00EmpresaEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t00EmpresaController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditT00EmpresaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{t00EmpresaController.selected.id}" title="#{bundle.EditT00EmpresaTitle_id}" required="true" requiredMessage="#{bundle.EditT00EmpresaRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditT00EmpresaLabel_ruc}" for="ruc" />
                         <p:inputText id="ruc" value="#{t00EmpresaController.selected.ruc}" title="#{bundle.EditT00EmpresaTitle_ruc}" />
                         <p:outputLabel value="#{bundle.EditT00EmpresaLabel_razonSocial}" for="razonSocial" />

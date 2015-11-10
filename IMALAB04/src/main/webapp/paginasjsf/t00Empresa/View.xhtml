@@ -12,8 +12,6 @@
             <h:form id="T00EmpresaViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t00EmpresaController.selected != null}">
-                        <h:outputText value="#{bundle.ViewT00EmpresaLabel_id}"/>
-                        <h:outputText value="#{t00EmpresaController.selected.id}" title="#{bundle.ViewT00EmpresaTitle_id}"/>
                         <h:outputText value="#{bundle.ViewT00EmpresaLabel_ruc}"/>
                         <h:outputText value="#{t00EmpresaController.selected.ruc}" title="#{bundle.ViewT00EmpresaTitle_ruc}"/>
                         <h:outputText value="#{bundle.ViewT00EmpresaLabel_razonSocial}"/>
