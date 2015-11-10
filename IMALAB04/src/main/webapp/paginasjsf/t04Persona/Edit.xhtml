@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T04PersonaEditDlg" widgetVar="T04PersonaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditT04PersonaTitle}">
+            <h:form id="T04PersonaEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t04PersonaController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{t04PersonaController.selected.id}" title="#{bundle.EditT04PersonaTitle_id}" required="true" requiredMessage="#{bundle.EditT04PersonaRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_ccRuc}" for="ccRuc" />
+                        <p:inputText id="ccRuc" value="#{t04PersonaController.selected.ccRuc}" title="#{bundle.EditT04PersonaTitle_ccRuc}" />
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{t04PersonaController.selected.nombre}" title="#{bundle.EditT04PersonaTitle_nombre}" required="true" requiredMessage="#{bundle.EditT04PersonaRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_apellido}" for="apellido" />
+                        <p:inputText id="apellido" value="#{t04PersonaController.selected.apellido}" title="#{bundle.EditT04PersonaTitle_apellido}" required="true" requiredMessage="#{bundle.EditT04PersonaRequiredMessage_apellido}"/>
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_celular}" for="celular" />
+                        <p:inputText id="celular" value="#{t04PersonaController.selected.celular}" title="#{bundle.EditT04PersonaTitle_celular}" />
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_telefono}" for="telefono" />
+                        <p:inputText id="telefono" value="#{t04PersonaController.selected.telefono}" title="#{bundle.EditT04PersonaTitle_telefono}" />
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{t04PersonaController.selected.email}" title="#{bundle.EditT04PersonaTitle_email}" />
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_t04Paciente}" for="t04Paciente" />
+                        <p:selectOneMenu id="t04Paciente" value="#{t04PersonaController.selected.t04Paciente}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{t04PacienteController.itemsAvailableSelectOne}"
+                                           var="t04PacienteItem"
+                                           itemValue="#{t04PacienteItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditT04PersonaLabel_t04Refiriente}" for="t04Refiriente" />
+                        <p:selectOneMenu id="t04Refiriente" value="#{t04PersonaController.selected.t04Refiriente}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{t04RefirienteController.itemsAvailableSelectOne}"
+                                           var="t04RefirienteItem"
+                                           itemValue="#{t04RefirienteItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{t04PersonaController.update}" value="#{bundle.Save}" update="display,:T04PersonaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'T04PersonaEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="T04PersonaEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="PU_IMALAB" transaction-type="JTA">
+    <jta-data-source>jdbc/imalab</jta-data-source>
+    <class>ec.mil.he1.imalab05.T00Empresa</class>
+    <class>ec.mil.he1.imalab05.T01Grupos</class>
+    <class>ec.mil.he1.imalab05.T02Clasificacion</class>
+    <class>ec.mil.he1.imalab05.T03Determinacion</class>
+    <class>ec.mil.he1.imalab05.T04Paciente</class>
+    <class>ec.mil.he1.imalab05.T04Persona</class>
+    <class>ec.mil.he1.imalab05.T04Refiriente</class>
+    <class>ec.mil.he1.imalab05.T05DetalleFactura</class>
+    <class>ec.mil.he1.imalab05.T05Factura</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <validation-mode>NONE</validation-mode>
+    <properties/>
+  </persistence-unit>
+</persistence>

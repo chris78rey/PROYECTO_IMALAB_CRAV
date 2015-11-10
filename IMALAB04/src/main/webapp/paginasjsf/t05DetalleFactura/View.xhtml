@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T05DetalleFacturaViewDlg" widgetVar="T05DetalleFacturaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewT05DetalleFacturaTitle}">
+            <h:form id="T05DetalleFacturaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t05DetalleFacturaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewT05DetalleFacturaLabel_id}"/>
+                        <h:outputText value="#{t05DetalleFacturaController.selected.id}" title="#{bundle.ViewT05DetalleFacturaTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewT05DetalleFacturaLabel_valor}"/>
+                        <h:outputText value="#{t05DetalleFacturaController.selected.valor}" title="#{bundle.ViewT05DetalleFacturaTitle_valor}"/>
+                        <h:outputText value="#{bundle.ViewT05DetalleFacturaLabel_t03Determinacion}"/>
+                        <h:outputText value="#{t05DetalleFacturaController.selected.t03Determinacion}" title="#{bundle.ViewT05DetalleFacturaTitle_t03Determinacion}"/>
+                        <h:outputText value="#{bundle.ViewT05DetalleFacturaLabel_t04Refiriente}"/>
+                        <h:outputText value="#{t05DetalleFacturaController.selected.t04Refiriente}" title="#{bundle.ViewT05DetalleFacturaTitle_t04Refiriente}"/>
+                        <h:outputText value="#{bundle.ViewT05DetalleFacturaLabel_t05Factura}"/>
+                        <h:outputText value="#{t05DetalleFacturaController.selected.t05Factura}" title="#{bundle.ViewT05DetalleFacturaTitle_t05Factura}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="T05DetalleFacturaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T00EmpresaViewDlg" widgetVar="T00EmpresaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewT00EmpresaTitle}">
+            <h:form id="T00EmpresaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t00EmpresaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewT00EmpresaLabel_id}"/>
+                        <h:outputText value="#{t00EmpresaController.selected.id}" title="#{bundle.ViewT00EmpresaTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewT00EmpresaLabel_ruc}"/>
+                        <h:outputText value="#{t00EmpresaController.selected.ruc}" title="#{bundle.ViewT00EmpresaTitle_ruc}"/>
+                        <h:outputText value="#{bundle.ViewT00EmpresaLabel_razonSocial}"/>
+                        <h:outputText value="#{t00EmpresaController.selected.razonSocial}" title="#{bundle.ViewT00EmpresaTitle_razonSocial}"/>
+                        <h:outputText value="#{bundle.ViewT00EmpresaLabel_direccion}"/>
+                        <h:outputText value="#{t00EmpresaController.selected.direccion}" title="#{bundle.ViewT00EmpresaTitle_direccion}"/>
+                        <h:outputText value="#{bundle.ViewT00EmpresaLabel_telf}"/>
+                        <h:outputText value="#{t00EmpresaController.selected.telf}" title="#{bundle.ViewT00EmpresaTitle_telf}"/>
+                        <h:outputText value="#{bundle.ViewT00EmpresaLabel_representanteLegal}"/>
+                        <h:outputText value="#{t00EmpresaController.selected.representanteLegal}" title="#{bundle.ViewT00EmpresaTitle_representanteLegal}"/>
+                        <h:outputText value="#{bundle.ViewT00EmpresaLabel_actividadDedicada}"/>
+                        <h:outputText value="#{t00EmpresaController.selected.actividadDedicada}" title="#{bundle.ViewT00EmpresaTitle_actividadDedicada}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="T00EmpresaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

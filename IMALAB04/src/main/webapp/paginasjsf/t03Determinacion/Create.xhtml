@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T03DeterminacionCreateDlg" widgetVar="T03DeterminacionCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateT03DeterminacionTitle}">
+            <h:form id="T03DeterminacionCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t03DeterminacionController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{t03DeterminacionController.selected.id}" title="#{bundle.CreateT03DeterminacionTitle_id}" required="true" requiredMessage="#{bundle.CreateT03DeterminacionRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{t03DeterminacionController.selected.descripcion}" title="#{bundle.CreateT03DeterminacionTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateT03DeterminacionRequiredMessage_descripcion}"/>
+                        <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_fechaDefPrecio}" for="fechaDefPrecio" />
+                        <p:calendar id="fechaDefPrecio" pattern="MM/dd/yyyy HH:mm:ss" value="#{t03DeterminacionController.selected.fechaDefPrecio}" title="#{bundle.EditT03DeterminacionTitle_fechaDefPrecio}" required="true" requiredMessage="#{bundle.EditT03DeterminacionRequiredMessage_fechaDefPrecio}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_conDescuento}" for="conDescuento" />
+                        <p:inputText id="conDescuento" value="#{t03DeterminacionController.selected.conDescuento}" title="#{bundle.CreateT03DeterminacionTitle_conDescuento}" />
+                        <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_sinDescuento}" for="sinDescuento" />
+                        <p:inputText id="sinDescuento" value="#{t03DeterminacionController.selected.sinDescuento}" title="#{bundle.CreateT03DeterminacionTitle_sinDescuento}" />
+                        <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_iva}" for="iva" />
+                        <p:inputText id="iva" value="#{t03DeterminacionController.selected.iva}" title="#{bundle.CreateT03DeterminacionTitle_iva}" required="true" requiredMessage="#{bundle.CreateT03DeterminacionRequiredMessage_iva}"/>
+                        <p:outputLabel value="#{bundle.CreateT03DeterminacionLabel_t02Clasificacion}" for="t02Clasificacion" />
+                        <p:selectOneMenu id="t02Clasificacion" value="#{t03DeterminacionController.selected.t02Clasificacion}" required="true" requiredMessage="#{bundle.EditT03DeterminacionRequiredMessage_t02Clasificacion}">
+                            <f:selectItems value="#{t02ClasificacionController.itemsAvailableSelectOne}"
+                                           var="t02ClasificacionItem"
+                                           itemValue="#{t02ClasificacionItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{t03DeterminacionController.create}" value="#{bundle.Save}" update="display,:T03DeterminacionListForm:datalist,:growl" oncomplete="handleSubmit(args,'T03DeterminacionCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="T03DeterminacionCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

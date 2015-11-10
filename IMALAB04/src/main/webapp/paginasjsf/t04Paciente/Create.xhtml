@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T04PacienteCreateDlg" widgetVar="T04PacienteCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateT04PacienteTitle}">
+            <h:form id="T04PacienteCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t04PacienteController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateT04PacienteLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{t04PacienteController.selected.id}" title="#{bundle.CreateT04PacienteTitle_id}" required="true" requiredMessage="#{bundle.CreateT04PacienteRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateT04PacienteLabel_t04Persona}" for="t04Persona" />
+                        <p:selectOneMenu id="t04Persona" value="#{t04PacienteController.selected.t04Persona}" required="true" requiredMessage="#{bundle.EditT04PacienteRequiredMessage_t04Persona}">
+                            <f:selectItems value="#{t04PersonaController.itemsAvailableSelectOne}"
+                                           var="t04PersonaItem"
+                                           itemValue="#{t04PersonaItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{t04PacienteController.create}" value="#{bundle.Save}" update="display,:T04PacienteListForm:datalist,:growl" oncomplete="handleSubmit(args,'T04PacienteCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="T04PacienteCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T03DeterminacionViewDlg" widgetVar="T03DeterminacionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewT03DeterminacionTitle}">
+            <h:form id="T03DeterminacionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t03DeterminacionController.selected != null}">
+                        <h:outputText value="#{bundle.ViewT03DeterminacionLabel_id}"/>
+                        <h:outputText value="#{t03DeterminacionController.selected.id}" title="#{bundle.ViewT03DeterminacionTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewT03DeterminacionLabel_descripcion}"/>
+                        <h:outputText value="#{t03DeterminacionController.selected.descripcion}" title="#{bundle.ViewT03DeterminacionTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewT03DeterminacionLabel_fechaDefPrecio}"/>
+                        <h:outputText value="#{t03DeterminacionController.selected.fechaDefPrecio}" title="#{bundle.ViewT03DeterminacionTitle_fechaDefPrecio}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewT03DeterminacionLabel_conDescuento}"/>
+                        <h:outputText value="#{t03DeterminacionController.selected.conDescuento}" title="#{bundle.ViewT03DeterminacionTitle_conDescuento}"/>
+                        <h:outputText value="#{bundle.ViewT03DeterminacionLabel_sinDescuento}"/>
+                        <h:outputText value="#{t03DeterminacionController.selected.sinDescuento}" title="#{bundle.ViewT03DeterminacionTitle_sinDescuento}"/>
+                        <h:outputText value="#{bundle.ViewT03DeterminacionLabel_iva}"/>
+                        <h:outputText value="#{t03DeterminacionController.selected.iva}" title="#{bundle.ViewT03DeterminacionTitle_iva}"/>
+                        <h:outputText value="#{bundle.ViewT03DeterminacionLabel_t02Clasificacion}"/>
+                        <h:outputText value="#{t03DeterminacionController.selected.t02Clasificacion}" title="#{bundle.ViewT03DeterminacionTitle_t02Clasificacion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="T03DeterminacionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

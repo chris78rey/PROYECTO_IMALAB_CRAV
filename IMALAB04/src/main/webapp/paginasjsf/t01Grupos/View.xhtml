@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T01GruposViewDlg" widgetVar="T01GruposViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewT01GruposTitle}">
+            <h:form id="T01GruposViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t01GruposController.selected != null}">
+                        <h:outputText value="#{bundle.ViewT01GruposLabel_id}"/>
+                        <h:outputText value="#{t01GruposController.selected.id}" title="#{bundle.ViewT01GruposTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewT01GruposLabel_descripcion}"/>
+                        <h:outputText value="#{t01GruposController.selected.descripcion}" title="#{bundle.ViewT01GruposTitle_descripcion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="T01GruposViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

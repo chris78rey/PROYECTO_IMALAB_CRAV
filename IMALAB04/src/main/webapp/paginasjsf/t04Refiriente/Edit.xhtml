@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T04RefirienteEditDlg" widgetVar="T04RefirienteEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditT04RefirienteTitle}">
+            <h:form id="T04RefirienteEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t04RefirienteController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditT04RefirienteLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{t04RefirienteController.selected.id}" title="#{bundle.EditT04RefirienteTitle_id}" required="true" requiredMessage="#{bundle.EditT04RefirienteRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditT04RefirienteLabel_dirConsultorio}" for="dirConsultorio" />
+                        <p:inputText id="dirConsultorio" value="#{t04RefirienteController.selected.dirConsultorio}" title="#{bundle.EditT04RefirienteTitle_dirConsultorio}" />
+                        <p:outputLabel value="#{bundle.EditT04RefirienteLabel_porcentajeRefiriente}" for="porcentajeRefiriente" />
+                        <p:inputText id="porcentajeRefiriente" value="#{t04RefirienteController.selected.porcentajeRefiriente}" title="#{bundle.EditT04RefirienteTitle_porcentajeRefiriente}" />
+                        <p:outputLabel value="#{bundle.EditT04RefirienteLabel_t04Persona}" for="t04Persona" />
+                        <p:selectOneMenu id="t04Persona" value="#{t04RefirienteController.selected.t04Persona}" required="true" requiredMessage="#{bundle.EditT04RefirienteRequiredMessage_t04Persona}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{t04PersonaController.itemsAvailableSelectOne}"
+                                           var="t04PersonaItem"
+                                           itemValue="#{t04PersonaItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{t04RefirienteController.update}" value="#{bundle.Save}" update="display,:T04RefirienteListForm:datalist,:growl" oncomplete="handleSubmit(args, 'T04RefirienteEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="T04RefirienteEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

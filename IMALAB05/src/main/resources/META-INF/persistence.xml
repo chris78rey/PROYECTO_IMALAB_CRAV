@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ec.mil.he1_IMALAB05_jar_1.0PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>ec.mil.he1.imalab05.T04Refiriente</class>
+    <class>ec.mil.he1.imalab05.T05Factura</class>
+    <class>ec.mil.he1.imalab05.T03Determinacion</class>
+    <class>ec.mil.he1.imalab05.T02Clasificacion</class>
+    <class>ec.mil.he1.imalab05.T05DetalleFactura</class>
+    <class>ec.mil.he1.imalab05.T00Empresa</class>
+    <class>ec.mil.he1.imalab05.T01Grupos</class>
+    <class>ec.mil.he1.imalab05.T04Persona</class>
+    <class>ec.mil.he1.imalab05.T04Paciente</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@172.16.60.20:1521:prdsgh1"/>
+      <property name="javax.persistence.jdbc.user" value="IMALAB"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.password" value="IMALAB"/>
+    </properties>
+  </persistence-unit>
+</persistence>

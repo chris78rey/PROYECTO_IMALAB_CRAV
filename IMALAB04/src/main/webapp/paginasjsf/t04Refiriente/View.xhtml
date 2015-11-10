@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T04RefirienteViewDlg" widgetVar="T04RefirienteViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewT04RefirienteTitle}">
+            <h:form id="T04RefirienteViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t04RefirienteController.selected != null}">
+                        <h:outputText value="#{bundle.ViewT04RefirienteLabel_id}"/>
+                        <h:outputText value="#{t04RefirienteController.selected.id}" title="#{bundle.ViewT04RefirienteTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewT04RefirienteLabel_dirConsultorio}"/>
+                        <h:outputText value="#{t04RefirienteController.selected.dirConsultorio}" title="#{bundle.ViewT04RefirienteTitle_dirConsultorio}"/>
+                        <h:outputText value="#{bundle.ViewT04RefirienteLabel_porcentajeRefiriente}"/>
+                        <h:outputText value="#{t04RefirienteController.selected.porcentajeRefiriente}" title="#{bundle.ViewT04RefirienteTitle_porcentajeRefiriente}"/>
+                        <h:outputText value="#{bundle.ViewT04RefirienteLabel_t04Persona}"/>
+                        <h:outputText value="#{t04RefirienteController.selected.t04Persona}" title="#{bundle.ViewT04RefirienteTitle_t04Persona}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="T04RefirienteViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="T04PersonaViewDlg" widgetVar="T04PersonaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewT04PersonaTitle}">
+            <h:form id="T04PersonaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{t04PersonaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_id}"/>
+                        <h:outputText value="#{t04PersonaController.selected.id}" title="#{bundle.ViewT04PersonaTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_ccRuc}"/>
+                        <h:outputText value="#{t04PersonaController.selected.ccRuc}" title="#{bundle.ViewT04PersonaTitle_ccRuc}"/>
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_nombre}"/>
+                        <h:outputText value="#{t04PersonaController.selected.nombre}" title="#{bundle.ViewT04PersonaTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_apellido}"/>
+                        <h:outputText value="#{t04PersonaController.selected.apellido}" title="#{bundle.ViewT04PersonaTitle_apellido}"/>
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_celular}"/>
+                        <h:outputText value="#{t04PersonaController.selected.celular}" title="#{bundle.ViewT04PersonaTitle_celular}"/>
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_telefono}"/>
+                        <h:outputText value="#{t04PersonaController.selected.telefono}" title="#{bundle.ViewT04PersonaTitle_telefono}"/>
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_email}"/>
+                        <h:outputText value="#{t04PersonaController.selected.email}" title="#{bundle.ViewT04PersonaTitle_email}"/>
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_t04Paciente}"/>
+                        <h:outputText value="#{t04PersonaController.selected.t04Paciente}" title="#{bundle.ViewT04PersonaTitle_t04Paciente}"/>
+                        <h:outputText value="#{bundle.ViewT04PersonaLabel_t04Refiriente}"/>
+                        <h:outputText value="#{t04PersonaController.selected.t04Refiriente}" title="#{bundle.ViewT04PersonaTitle_t04Refiriente}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="T04PersonaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
