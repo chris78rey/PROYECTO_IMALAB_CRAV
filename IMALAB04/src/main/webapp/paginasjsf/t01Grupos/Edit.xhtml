@@ -12,8 +12,6 @@
             <h:form id="T01GruposEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{t01GruposController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditT01GruposLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{t01GruposController.selected.id}" title="#{bundle.EditT01GruposTitle_id}" required="true" requiredMessage="#{bundle.EditT01GruposRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditT01GruposLabel_descripcion}" for="descripcion" />
                         <p:inputText id="descripcion" value="#{t01GruposController.selected.descripcion}" title="#{bundle.EditT01GruposTitle_descripcion}" />
                     </p:panelGrid>
