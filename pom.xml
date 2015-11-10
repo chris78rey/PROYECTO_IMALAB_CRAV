@@ -9,6 +9,7 @@
         <module>IMALAB02</module>
     <module>IMALAB04</module>
         <module>IMALAB05</module>
+        <module>IMALAB03/IMALAB03</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
